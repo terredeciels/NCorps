@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minWidth="302.0" prefHeight="704.0" prefWidth="302.0"
+            style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="gui.EventHandlingController">
+    <VBox id="VBox" alignment="CENTER" layoutX="14.0" layoutY="17.0" spacing="5.0">
+        <Slider fx:id="mySlider" max="600.0" min="10.0" showTickLabels="true" showTickMarks="true"
+                style="-fx-background-color: white;" value="5.0"/>
+    </VBox>
+    <TextArea fx:id="outputTextArea" layoutX="11.0" layoutY="547.0" prefHeight="135.0" prefWidth="286.0"
+              wrapText="true"/>
+    <Button fx:id="myButton" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" text="Start"/>
+    <Button fx:id="resetButton" layoutX="172.0" layoutY="78.0" mnemonicParsing="false" text="reset"/>
+    <TextField fx:id="rCentre" layoutX="14.0" layoutY="141.0" prefHeight="26.0" prefWidth="156.0"
+               style="-fx-background-color: white;"/>
+    <Slider fx:id="distCollisionSlider" layoutX="14.0" layoutY="206.0" max="50.0" min="1.0" showTickLabels="true"
+            showTickMarks="true" style="-fx-background-color: white;"/>
+</AnchorPane>
