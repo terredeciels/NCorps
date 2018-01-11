@@ -6,7 +6,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import ncorps.Constants;
+import ncorps.parameter.Constants;
 import ncorps.NCorps3DApp;
 
 public class EventHandlingController {

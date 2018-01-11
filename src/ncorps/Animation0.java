@@ -3,6 +3,9 @@ package ncorps;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
+import ncorps.basephysic.Corps3D;
+import ncorps.basephysic.Gravity;
+import ncorps.parameter.Constants;
 
 import java.util.ArrayList;
 import java.util.stream.IntStream;

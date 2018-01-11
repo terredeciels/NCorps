@@ -4,6 +4,7 @@ import javafx.scene.DepthTest;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import ncorps.parameter.Constants;
 
 public class NCorps3DApp extends Action3D implements Constants {
 

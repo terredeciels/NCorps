@@ -1,4 +1,4 @@
-package ncorps;
+package ncorps.parameter;
 
 import javafx.scene.paint.Color;
 

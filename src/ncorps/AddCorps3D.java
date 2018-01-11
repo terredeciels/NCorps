@@ -1,6 +1,9 @@
 package ncorps;
 
 import javafx.animation.AnimationTimer;
+import ncorps.basephysic.Corps3D;
+import ncorps.math.Vector3D;
+import ncorps.parameter.Constants;
 
 import java.util.List;
 import java.util.Random;

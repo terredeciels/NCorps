@@ -1,4 +1,7 @@
-package ncorps;
+package ncorps.basephysic;
+
+import ncorps.Xform;
+import ncorps.math.Vector3D;
 
 public class Corps3D extends Xform
         // extends Region
@@ -13,6 +16,7 @@ public class Corps3D extends Xform
 
     public Corps3D(double masse, Vector3D position, Vector3D velocity,
                    Vector3D acceleration, boolean centre) {
+        super();
         m = masse;
         X = position;
         v = velocity;

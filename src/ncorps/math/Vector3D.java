@@ -1,4 +1,4 @@
-package ncorps;
+package ncorps.math;
 
 import static java.lang.Math.sqrt;
 
@@ -14,7 +14,7 @@ public class Vector3D {
         this.z = z;
     }
 
-    static Vector3D subtract(Vector3D v1, Vector3D v2) {
+    public static Vector3D subtract(Vector3D v1, Vector3D v2) {
         return new Vector3D(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
     }
 

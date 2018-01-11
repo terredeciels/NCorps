@@ -13,6 +13,13 @@ import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
 
 public abstract class Action3D extends Application {
+    final PerspectiveCamera camera = new PerspectiveCamera(true);
+    final Group root = new Group();
+    final Xform world = new Xform();
+    private final Xform cameraXform = new Xform();
+    private final Xform cameraXform2 = new Xform();
+    private final Xform cameraXform3 = new Xform();
+    private final Xform axisGroup = new Xform();
     double CAMERA_INITIAL_X_ANGLE = 70.0;
     double CAMERA_INITIAL_Y_ANGLE = 320.0;
     double CAMERA_NEAR_CLIP = 0.1;
@@ -24,13 +31,6 @@ public abstract class Action3D extends Application {
     double ROTATION_SPEED = 2.0;
     double TRACK_SPEED = 0.3;
     double CAMERA_INITIAL_DISTANCE = -450;
-    final PerspectiveCamera camera = new PerspectiveCamera(true);
-    final Group root = new Group();
-    final Xform world = new Xform();
-    private final Xform cameraXform = new Xform();
-    private final Xform cameraXform2 = new Xform();
-    private final Xform cameraXform3 = new Xform();
-    private final Xform axisGroup = new Xform();
     Animation0 anim;
     private double mousePosX, mousePosY, mouseOldX, mouseOldY, mouseDeltaX, mouseDeltaY;
 
@@ -40,15 +40,12 @@ public abstract class Action3D extends Application {
         cameraXform.getChildren().add(cameraXform2);
         cameraXform2.getChildren().add(cameraXform3);
         cameraXform3.getChildren().add(camera);
-        cameraXform3.setRotateZ(180.0);
-       // cameraXform3.rz.setAngle(180.0);
-
-
+       // cameraXform3.setRotateZ(180.0);
+         cameraXform3.rz.setAngle(180.0);
         camera.setNearClip(CAMERA_NEAR_CLIP);
         camera.setFarClip(CAMERA_FAR_CLIP);
         camera.setTranslateZ(CAMERA_INITIAL_DISTANCE);
         cameraXform.ry.setAngle(CAMERA_INITIAL_Y_ANGLE);
-
         cameraXform.rx.setAngle(CAMERA_INITIAL_X_ANGLE);
     }
 
@@ -57,14 +54,6 @@ public abstract class Action3D extends Application {
         final PhongMaterial blueMaterial = new PhongMaterial();
         blueMaterial.setDiffuseColor(Color.LIGHTGRAY);
         blueMaterial.setSpecularColor(Color.GREY);
-
-//        final PhongMaterial greenMaterial = new PhongMaterial();
-//        greenMaterial.setDiffuseColor(Color.DARKGREEN);
-//        greenMaterial.setSpecularColor(Color.GREEN);
-//
-//        final PhongMaterial blueMaterial = new PhongMaterial();
-//        blueMaterial.setDiffuseColor(Color.DARKBLUE);
-//        blueMaterial.setSpecularColor(Color.BLUE);
 
         final Box xAxis = new Box(AXIS_LENGTH, 1, 0.2);
         final Box yAxis = new Box(0.2, AXIS_LENGTH, 1);
