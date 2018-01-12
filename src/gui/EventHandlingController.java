@@ -6,8 +6,10 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import ncorps.parameter.Constants;
 import ncorps.NCorps3DApp;
+import ncorps.parameter.Constants;
+
+import static java.lang.System.exit;
 
 public class EventHandlingController {
     @FXML
@@ -16,6 +18,8 @@ public class EventHandlingController {
     public TextField rCentre;
     @FXML
     public Slider distCollisionSlider;
+    @FXML
+    public Button quitButton;
     @FXML
     private Button myButton;
     @FXML
@@ -41,6 +45,10 @@ public class EventHandlingController {
         resetButton.setOnAction((event) -> {
             outputTextArea.appendText("Reset\n");
             primestage2.close();
+        });
+        quitButton.setOnAction((event) -> {
+            primestage2.close();
+            exit(0);
         });
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             outputTextArea.appendText("NbParticules : " + newValue.intValue() + "\n");

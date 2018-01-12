@@ -1,9 +1,9 @@
 package ncorps.basephysic;
 
-import ncorps.Xform;
+import ncorps.EXForm;
 import ncorps.math.Vector3D;
 
-public class Corps3D extends Xform
+public class Corps3D extends EXForm.Xform
         // extends Region
 {
 

@@ -13,15 +13,12 @@ import java.util.stream.IntStream;
 public class Animation0 extends AddCorps3D implements Constants {
 
     private final double distCollision;
-    PhongMaterial whitemat;
+    private PhongMaterial whitemat;
     private NCorps3DApp ncorps;
-    private Xform nbodyGroup;
-    private Xform nbodyGroup2;
-    private boolean first;
-    private long now0 = 0;
+    private EXForm.Xform nbodyGroup;
+    private EXForm.Xform nbodyGroup2;
 
     Animation0(NCorps3DApp ncorps) {
-        // first = true;
         this.ncorps = ncorps;
         distCollision = ncorps.distCollision;
         allParticles = new ArrayList<>();
@@ -32,30 +29,18 @@ public class Animation0 extends AddCorps3D implements Constants {
 
     @Override
     public void handle(long now) {
-
-        //System.out.println(now);
-//        if (first) {
-//            now0 = now;
-//            first = false;
-//        } else {
-//            if (now - now0 > step){
-//                stop();
-//            }
-//        }
-
         pause(dT); //50000000.0
-
         nbodyGroup2 = nbodyGroup;
         // AleatoireTest g = new AleatoireTest();
         Gravity g = new Gravity(allParticles, distCollision, DeltaT);
         g.move();
-        nbodyGroup = new Xform();
+        nbodyGroup = new EXForm.Xform();
         g.allParticles_deltaT.forEach(this::createSphere);
 
         allParticles = g.allParticles_deltaT;
 
-        ncorps.world.getChildren().removeAll(nbodyGroup2);
-        ncorps.world.getChildren().addAll(nbodyGroup);
+        ncorps.Univers.world.getChildren().removeAll(nbodyGroup2);
+        ncorps.Univers.world.getChildren().addAll(nbodyGroup);
     }
 
     private void pause(double dT) {
@@ -87,9 +72,6 @@ public class Animation0 extends AddCorps3D implements Constants {
     }
 
     private PhongMaterial getPhongMaterial() {
-//        final PhongMaterial greymat = new PhongMaterial();
-//        greymat.setDiffuseColor(Color.DARKGREY);
-//        greymat.setSpecularColor(Color.DARKGREY);
         final PhongMaterial whitemat = new PhongMaterial();
         whitemat.setDiffuseColor(Color.WHITE);
         whitemat.setSpecularColor(Color.WHITE);

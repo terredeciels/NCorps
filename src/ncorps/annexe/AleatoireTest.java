@@ -1,8 +1,8 @@
 package ncorps.annexe;
 
-import ncorps.parameter.Constants;
 import ncorps.basephysic.Corps3D;
 import ncorps.math.Vector3D;
+import ncorps.parameter.Constants;
 
 import java.util.ArrayList;
 import java.util.List;

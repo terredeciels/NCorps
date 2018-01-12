@@ -18,4 +18,5 @@
                style="-fx-background-color: white;"/>
     <Slider fx:id="distCollisionSlider" layoutX="14.0" layoutY="206.0" max="50.0" min="1.0" showTickLabels="true"
             showTickMarks="true" style="-fx-background-color: white;"/>
+    <Button fx:id="quitButton" layoutX="204.0" layoutY="482.0" mnemonicParsing="false" text="Quit"/>
 </AnchorPane>

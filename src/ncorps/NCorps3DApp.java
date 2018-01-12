@@ -8,7 +8,6 @@ import ncorps.parameter.Constants;
 
 public class NCorps3DApp extends Action3D implements Constants {
 
-
     final int NbParticules;
     final double rCentre;
     final double distCollision;
@@ -26,22 +25,16 @@ public class NCorps3DApp extends Action3D implements Constants {
     @Override
     public void start(Stage primaryStage) {
 
-        // System.out.println("start()");
-
-        root.getChildren().add(world);
+        root.getChildren().add(Univers.world);
         root.setDepthTest(DepthTest.ENABLE);
-
         buildCamera();
         buildAxes();
-        //buildBody();
-        // world.getChildren().addAll(nbodyGroup);
-
         double W = 900.0;
         double H = 600.0;
         Scene scene = new Scene(root, W, H, true);
         scene.setFill(Color.BLACK);
-        handleKeyboard(scene, world);
-        handleMouse(scene, world);
+        handleKeyboard(scene, Univers.world);
+        handleMouse(scene, Univers.world);
         primaryStage.setTitle("NCorps");
         primaryStage.setScene(scene);
         primaryStage.setX(305);
@@ -54,6 +47,4 @@ public class NCorps3DApp extends Action3D implements Constants {
         anim.start();
 
     }
-
-
 }
