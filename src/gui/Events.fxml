@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" minWidth="302.0" prefHeight="704.0" prefWidth="302.0"
             style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.121"
             fx:controller="gui.EventHandlingController">
@@ -19,4 +21,13 @@
     <Slider fx:id="distCollisionSlider" layoutX="14.0" layoutY="206.0" max="50.0" min="1.0" showTickLabels="true"
             showTickMarks="true" style="-fx-background-color: white;"/>
     <Button fx:id="quitButton" layoutX="204.0" layoutY="482.0" mnemonicParsing="false" text="Quit"/>
+    <ComboBox fx:id="comboboxType" layoutX="9.0" layoutY="291.0" prefWidth="150.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Item 1"/>
+                <String fx:value="Item 2"/>
+                <String fx:value="Item 3"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
 </AnchorPane>
