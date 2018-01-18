@@ -22,8 +22,10 @@ public class Animation0 extends AddCorps3D implements Constants {
         this.ncorps = ncorps;
         distCollision = ncorps.distCollision;
         allParticles = new ArrayList<>();
-        IntStream.range(0, ncorps.NbParticules).forEach(i -> addParticule());
-        addParticule_0(ncorps.rCentre);
+        // IntStream.range(0, ncorps.NbParticules).forEach(i -> addParticule());
+        IntStream.range(0, ncorps.NbParticules).forEach(i -> addCorps3D(ncorps.distribType).addParticule());
+        // addParticule_0(ncorps.rCentre);
+        addCorps3D("Noyau").addParticule();
         whitemat = getPhongMaterial();
     }
 

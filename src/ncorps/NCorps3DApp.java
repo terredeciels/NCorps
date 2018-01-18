@@ -1,5 +1,6 @@
 package ncorps;
 
+import gui.DistribType;
 import javafx.scene.DepthTest;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -11,11 +12,13 @@ public class NCorps3DApp extends Action3D implements Constants {
     final int NbParticules;
     final double rCentre;
     final double distCollision;
+    final DistribType distribType;
 
-    public NCorps3DApp(int nbPart, double rCentreVal, double distColl) {
+    public NCorps3DApp(int nbPart, double rCentreVal, double distColl, DistribType distribT) {
         NbParticules = nbPart;
         rCentre = rCentreVal;
         distCollision = distColl;
+        distribType = distribT;
     }
 
     public static void main(String[] args) {
