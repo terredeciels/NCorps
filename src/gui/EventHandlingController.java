@@ -53,6 +53,8 @@ public class EventHandlingController {
                 NbParticules = Constants.NbParticules0;
             }
             primestage2 = new Stage();
+            if (distribType == null)
+                distribType = new DistribType("Ellipsoide");
             new NCorps3DApp(NbParticules, rCentreVal,
                     distCollision, distribType).start(primestage2);
         });
@@ -113,9 +115,8 @@ public class EventHandlingController {
         comboboxType.setOnAction((event) -> {
             DistribType selectedDistribType = comboboxType.getSelectionModel().getSelectedItem();
             outputTextArea.appendText(selectedDistribType + "\n");
-            if (selectedDistribType == null)
-                distribType = new DistribType("Ellipsoide");
-            else distribType = selectedDistribType;
+
+             distribType = selectedDistribType;
         });
 
     }

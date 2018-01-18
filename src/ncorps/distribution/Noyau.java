@@ -3,15 +3,19 @@ package ncorps.distribution;
 import ncorps.basephysic.Corps3D;
 import ncorps.math.Vector3D;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static ncorps.parameter.Constants.mCentre;
 
 public class Noyau implements IDistribution {
 
-    List<Corps3D> allParticles;
+    private List<Corps3D> allParticles;
     private double rCentre;
 
+    public Noyau() {
+        allParticles = new ArrayList<>();
+    }
 
     @Override
     public void addParticule() {
