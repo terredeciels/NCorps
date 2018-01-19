@@ -16,7 +16,7 @@
               wrapText="true"/>
     <Button fx:id="myButton" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" text="Start"/>
     <Button fx:id="resetButton" layoutX="172.0" layoutY="78.0" mnemonicParsing="false" text="reset"/>
-    <TextField fx:id="rCentre" layoutX="14.0" layoutY="141.0" prefHeight="26.0" prefWidth="156.0"
+    <TextField fx:id="mCentre" layoutX="14.0" layoutY="141.0" prefHeight="26.0" prefWidth="156.0"
                style="-fx-background-color: white;"/>
     <Slider fx:id="distCollisionSlider" layoutX="14.0" layoutY="206.0" max="50.0" min="1.0" showTickLabels="true"
             showTickMarks="true" style="-fx-background-color: white;"/>

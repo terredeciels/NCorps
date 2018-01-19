@@ -2,19 +2,14 @@ package ncorps.distribution;
 
 import ncorps.basephysic.Corps3D;
 import ncorps.math.Vector3D;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static ncorps.parameter.Constants.mCentre;
+import ncorps.parameter.Constants;
 
 public class Noyau implements IDistribution {
 
-    private List<Corps3D> allParticles;
-    private double rCentre;
+    private double mCentre;
 
-    public Noyau() {
-        allParticles = new ArrayList<>();
+    public Noyau(double mCentre) {
+        this.mCentre = mCentre;
     }
 
     @Override
@@ -26,10 +21,10 @@ public class Noyau implements IDistribution {
         Vector3D v = new Vector3D(0, 0, 0);
         Vector3D a = new Vector3D(0, 0, 0);
         Corps3D p;
-        if (rCentre != 0) {
-            p = new Corps3D(rCentre, X, v, a, true);
-        } else {
+        if (mCentre != 0) {
             p = new Corps3D(mCentre, X, v, a, true);
+        } else {
+            p = new Corps3D(Constants.mCentre, X, v, a, true);
         }
         allParticles.add(p);
     }

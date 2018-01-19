@@ -4,12 +4,7 @@ import ncorps.basephysic.Corps3D;
 import ncorps.math.Vector3D;
 import ncorps.parameter.Constants;
 
-import java.util.List;
-import java.util.Random;
-
 public class Anneau implements IDistribution, Constants {
-    List<Corps3D> allParticles;
-    private Random random = new Random();
 
     @Override
     public void addParticule() {

@@ -10,13 +10,13 @@ import ncorps.parameter.Constants;
 public class NCorps3DApp extends Action3D implements Constants {
 
     final int NbParticules;
-    final double rCentre;
+    final double mCentre;
     final double distCollision;
     final DistribType distribType;
 
-    public NCorps3DApp(int nbPart, double rCentreVal, double distColl, DistribType distribT) {
+    public NCorps3DApp(int nbPart, double mCentreVal, double distColl, DistribType distribT) {
         NbParticules = nbPart;
-        rCentre = rCentreVal;
+        mCentre = mCentreVal;
         distCollision = distColl;
         distribType = distribT;
     }

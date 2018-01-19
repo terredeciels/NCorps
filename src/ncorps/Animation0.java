@@ -5,9 +5,10 @@ import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import ncorps.basephysic.Corps3D;
 import ncorps.basephysic.Gravity;
+import ncorps.distribution.IDistribution;
+import ncorps.distribution.Noyau;
 import ncorps.parameter.Constants;
 
-import java.util.ArrayList;
 import java.util.stream.IntStream;
 
 public class Animation0 extends AddCorps3D implements Constants {
@@ -21,11 +22,13 @@ public class Animation0 extends AddCorps3D implements Constants {
     Animation0(NCorps3DApp ncorps) {
         this.ncorps = ncorps;
         distCollision = ncorps.distCollision;
-        allParticles = new ArrayList<>();
-        // IntStream.range(0, ncorps.NbParticules).forEach(i -> addParticule());
-        IntStream.range(0, ncorps.NbParticules).forEach(i -> addCorps3D(ncorps.distribType).addParticule());
-        // addParticule_0(ncorps.rCentre);
-        addCorps3D("Noyau").addParticule();
+        IDistribution iDistrib = addCorps3D(ncorps.distribType);
+        IntStream.range(0, ncorps.NbParticules).forEach(i -> {
+            iDistrib.addParticule();
+        });
+        allParticles = iDistrib.allParticles;
+        Noyau noyau = new Noyau(ncorps.mCentre);
+        noyau.addParticule();
         whitemat = getPhongMaterial();
     }
 

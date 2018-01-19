@@ -14,7 +14,7 @@ public class EventHandlingController {
     @FXML
     public Button resetButton;
     @FXML
-    public TextField rCentre;
+    public TextField mCentre;
     @FXML
     public Slider distCollisionSlider;
     @FXML
@@ -31,7 +31,7 @@ public class EventHandlingController {
 
     private int NbParticules;
     private Stage primestage2;
-    private double rCentreVal;
+    private double mCentreVal;
     private double distCollision;
     private DistribType distribType;
 
@@ -55,7 +55,7 @@ public class EventHandlingController {
             primestage2 = new Stage();
             if (distribType == null)
                 distribType = new DistribType("Ellipsoide");
-            new NCorps3DApp(NbParticules, rCentreVal,
+            new NCorps3DApp(NbParticules, mCentreVal,
                     distCollision, distribType).start(primestage2);
         });
         resetButton.setOnAction((event) -> {
@@ -74,10 +74,10 @@ public class EventHandlingController {
             outputTextArea.appendText("distCollision : " + newValue.intValue() + "\n");
             distCollision = newValue.intValue();
         });
-        rCentre.textProperty().addListener((observable, oldValue, newValue) -> {
+        mCentre.textProperty().addListener((observable, oldValue, newValue) -> {
             outputTextArea.appendText(String.valueOf(Constants.mCentre));
-            outputTextArea.appendText("rCentre : " + newValue + "\n");
-            rCentreVal = Double.parseDouble(newValue);
+            outputTextArea.appendText("mCentre : " + newValue + "\n");
+            mCentreVal = Double.parseDouble(newValue);
         });
 
         comboboxType.setItems(myComboBoxData);
@@ -116,7 +116,7 @@ public class EventHandlingController {
             DistribType selectedDistribType = comboboxType.getSelectionModel().getSelectedItem();
             outputTextArea.appendText(selectedDistribType + "\n");
 
-             distribType = selectedDistribType;
+            distribType = selectedDistribType;
         });
 
     }
